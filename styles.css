@@ -1,0 +1,194 @@
+html {
+    color:rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+
+.especificidad{
+    color: red !important
+}
+#especificidad{
+    color:blue;
+}
+
+/* Explicación de selectores CSS */
+/* Los selectores CSS se utilizan para seleccionar los elementos HTML a los que se aplicarán los estilos. Existen varios tipos de selectores, incluyendo: */
+
+/* Selector de tipo */
+p {
+    color:blue;
+}
+/* Selector de clase - revisar html */
+.highlight {
+    background-color: yellow;
+}
+/* Selector de ID - revisar html */
+#main-title {
+    font-size: 50px;
+}
+/* Selector de atributo - No enseñar*/
+a[target="_blank"] {
+    color: red;
+}
+/* Selector de descendiente */
+ul li .highlight{
+    color: orange;
+}
+
+/* Box Model Example */
+/* Algunas etiquetas como p tienen margenes por defecto */
+.box {
+    border: 1px solid rgb(0, 0, 0); /* Borde alrededor del contenido */
+    padding: 0px; /* Espacio entre el contenido y el borde, el orden es top, right, bottom, left */
+    /* Explicar el padding del ejemplo primero con los cuatro valores, luego con dos y finalmente con uno. */
+    /* Explicar ahora el margin pero del box-content que corresponde al padding de este ejemplo. */
+}
+
+.box-content {
+    border: 2px solid rgb(0, 0, 0); /* Borde alrededor del contenido */
+    /* border-radius: 50%; */
+    background-color: lightgray; /* Color de fondo del contenido */
+    margin: 10px 10px; /* Espacio fuera del borde, el orden es top, right, bottom, left */
+    padding: 10px; /* Espacio entre el contenido y el borde, el orden es top, right, bottom, left */
+}    
+
+/* Unidades en CSS */
+.units-example {
+    font-size: 20px; /* Tamaño de fuente en píxeles */
+}
+.px {
+    width: 200px; /* Ancho en píxeles */
+    background-color: lightblue;
+}
+.percent {
+    width: 50%; /* Ancho en porcentaje, relativo al elemento contenedor padre */
+    background-color: lightgreen;
+}
+.em {
+    font-size: 1em; /* Tamaño de fuente en ems, relativo al tamaño de fuente del elemento */
+    background-color: lightcoral;
+}
+.rem {
+    font-size: 1rem; /* Tamaño de fuente en rems, relativo al tamaño de fuente del elemento raíz */
+    background-color: lightyellow;
+}
+
+.vw {
+    width: 50vw; /* Ancho en viewport width, relativo al ancho de la ventana del navegador */
+    background-color: lightpink;
+}
+
+.vh {
+    height: 20vh; /* Alto en viewport height, relativo al alto de la ventana del navegador */
+    background-color: lightgray;
+}
+
+/* Distribución de elementos */
+/* flexbox */
+#flex-container {
+    border: 2px solid rgb(0, 0, 0); /* Borde alrededor del contenedor */
+    display: flex; /* Establece un contenedor flexbox */
+    flex-direction: row; /* Dirección de los elementos flex (fila) default */
+    height: 100px; /* Altura del contenedor */
+    background-color: lightblue;
+    justify-content: space-around; /* Distribuye los elementos eje principal con espacio alrededor */
+    align-items: center; /* Alinea los elementos eje secundario al centro */
+}
+#flex-container1 {
+    border: 2px solid rgb(0, 0, 0); /* Borde alrededor del contenedor */
+    display: flex; /* Establece un contenedor flexbox */
+    flex-direction: column;
+    height: 100px;
+    flex-wrap:wrap; /* Permite que los elementos flex se envuelvan a la siguiente línea si no caben en una sola línea */
+    background-color: lightblue;
+    justify-content:center; /* Centra los elementos horizontalmente */
+    align-items:flex-end; /* Alinea los elementos verticalmente al centro */
+}
+#flex-container2 {
+    border: 2px solid rgb(0, 0, 0); /* Borde alrededor del contenedor */
+    display: flex; /* Establece un contenedor flexbox */
+    height: 100px; /* Altura del contenedor */
+    background-color: lightblue;
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    align-items:flex-start; /* Alinea los elementos verticalmente al centro */
+}
+
+.flex-item {
+    border: 1px solid rgb(0, 0, 0); /* Borde alrededor de los elementos flex */
+    padding: 10px; /* Espacio dentro de los elementos flex */
+    background-color: lightcoral;/* Permite que el elemento flex crezca para ocupar el espacio disponible, el número indica la proporción de crecimiento en relación con otros elementos flex */
+}
+
+/* grid */
+#grid-container {
+    border: 2px solid rgb(0, 0, 0); /* Borde alrededor del contenedor */
+    display: grid; /* Establece un contenedor grid */
+    grid-template-columns: repeat(2, 1fr); /* Define seis columnas de igual tamaño */
+    grid-template-rows: repeat(3, 50px); /* Define tres filas de 50px de altura */
+    gap: 10px; /* Espacio entre las celdas del grid */
+    background-color: lightgreen;
+    align-items: center;
+}
+
+.grid-item {
+    border: 1px solid rgb(0, 0, 0); /* Borde alrededor de los elementos del grid */
+    padding: 10px; /* Espacio dentro de los elementos del grid */
+    background-color: lightcoral;
+}
+
+.grid-item1 {
+    grid-column: span 2; /*o 1 / 3 -> El elemento ocupa desde la columna 1 hasta la columna 3 (todas las columnas) */
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    /* Estilos para pantallas pequeñas */
+    #flex-container, #flex-container1, #flex-container2 {
+        display: flex;
+        flex-direction: column; /* Cambia a una columna */
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    #grid-container{
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
+    .grid-item1 {
+        grid-column: auto; /* El elemento ocupa una sola columna */
+    }
+}
+
+/* Hover */
+.hover-link:hover {
+    background-color: red;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+/* Animations */
+.animated-box {
+    border: 2px solid rgb(0, 0, 0); /* Borde alrededor del elemento */
+    width:100px;
+    animation: example 10s infinite; /* Aplica la animación definida en @keyframes, con una duración de 2 segundos y que se repite infinitamente */
+ /*    animation: link 10s infinite; */ /* Aplica la animación definida en @keyframes, con una duración de 1 segundo y que se repite infinitamente */
+}
+
+@keyframes example { 
+    0% {background-color: lightblue; left: 0px; top: 0px;} 
+    25% {background-color: lightcoral; left: 200px; top: 0px;} 
+    50% {background-color: lightgreen; left: 200px; top: 200px;}
+    75% {background-color: lightyellow; left: 0px; top: 200px;}
+    100% {background-color: lightblue; left: 0px; top: 0px;}
+}   
+
+/* @keyframes link {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(100px);
+    }
+} */
+

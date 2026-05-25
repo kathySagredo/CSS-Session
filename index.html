@@ -1,0 +1,167 @@
+<!-- Usar ! para generar el boilerplate de HTML, es un atajo en Visual Studio Code que genera la estructura básica de un documento HTML. Al escribir ! y presionar Tab, se insertará automáticamente el código necesario para crear un documento HTML válido, incluyendo las etiquetas <html>, <head>, <body>, y otros elementos esenciales. Esto facilita y acelera el proceso de creación de páginas web, permitiendo a los desarrolladores centrarse en el contenido y el diseño en lugar de escribir la estructura básica desde cero. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="styles.css">
+<!-- <style>
+        /* Hoja de estilo interna */
+        body {
+            color:aqua;
+        }
+    </style> -->
+
+</head>
+<body>
+    <h1 style="color: brown;" id="main-title">CSS</h1>
+    <p>CSS (Cascading Style Sheets) es un lenguaje de hojas de estilo utilizado para describir la presentación de un documento HTML. Permite a los desarrolladores web controlar el diseño, el formato y la apariencia de las páginas web, separando el contenido (HTML) de la presentación (CSS). Con CSS, puedes definir estilos para elementos específicos, como colores, fuentes, márgenes, y mucho más, lo que facilita la creación de sitios web atractivos y consistentes.</p>   
+    <h2>Estructura CSS</h2>  
+    <p>La estructura básica de un archivo CSS se compone de selectores y declaraciones. Un selector es el elemento HTML al que deseas aplicar estilos, mientras que una declaración consiste en una propiedad y un valor que define cómo se debe presentar ese elemento. Por ejemplo:</p>
+    <pre class="highlight">
+        selector {
+            propiedad: valor;
+        }
+    </pre>
+    <p>En este ejemplo, "selector" es el elemento HTML que deseas estilizar, "propiedad" es la característica que deseas modificar (como color, tamaño de fuente, etc.), y "valor" es el valor específico que deseas asignar a esa propiedad.</p>
+    <h2>Agregar CSS a un documento HTML</h2>
+    <p>Hay tres formas de agregar CSS a un documento HTML:</p>
+    <ol>
+        <li><strong>Hoja de estilo interna:</strong> Se define dentro de la etiqueta <code>&lt;style&gt;</code> en el interior de la etiqueta <code>&lt;head&gt;</code>.</li>
+        <li><strong>Hoja de estilo externa:</strong> Se define en un archivo separado con extensión .css y se vincula al documento HTML usando la etiqueta <code>&lt;link&gt;</code>.</li>
+        <li><strong>Estilos en línea:</strong> Se definen directamente en los elementos HTML utilizando el atributo <code>style</code>.</li>
+    </ol>
+    <!-- Explicar ejemplo de cada forma en código -->
+    <!-- Usar forma externa -->
+     <h2>Selectores CSS</h2>
+    <p>Los selectores CSS son patrones utilizados para seleccionar los elementos HTML a los que se aplicarán los estilos. Existen varios tipos de selectores, incluyendo:</p>
+    <ul>
+        <li><strong>Selector de tipo:</strong> Selecciona elementos por su nombre de etiqueta (por ejemplo, <code>p</code> para párrafos).</li>
+        <li><strong>Selector de clase:</strong> Selecciona elementos que tienen una clase específica (por ejemplo, <code>.mi-clase</code>).</li>
+        <li><strong>Selector de ID:</strong> Selecciona un elemento único por su ID (por ejemplo, <code>#mi-id</code>).</li>
+        <li><strong>Selector de atributo:</strong> Selecciona elementos basados en la presencia o valor de un atributo (por ejemplo, <code>[type="text"]</code> para campos de texto).
+        <ul><li><a href="https://example.com" target="_blank">Enlace de ejemplo</a></li></ul>
+        </li>
+        <li><strong>Selector de descendiente:</strong> Selecciona elementos que son descendientes de otro elemento (por ejemplo, <code>div p</code> para párrafos dentro de un div).
+        <ul><li class="highlight">Este es un párrafo dentro de un lista.</li></ul>
+        </li>
+    </ul>
+    <p>La especificidad de los selectores CSS determina qué estilos se aplican a un elemento cuando hay múltiples selectores que coinciden con él. La especificidad se calcula en función de los diferentes tipos de selectores, siendo los selectores de ID los más específicos y los selectores de tipo los menos específicos.</p>
+    <p>El orden entonces sería el siguiente:</p>
+    <ol>
+        <li>Estilos en línea (más específicos)</li>
+        <li>Selectores de ID</li>
+        <li>Selectores de clase, pseudo-clases y atributos</li>
+        <li>Selectores de tipo (menos específicos)</li>
+    </ol>
+    <p> Ejemplo: </p>
+    <p  style="color:green" class="especificidad" >Ejemplo</p>
+    <h2>Propiedades CSS comunes</h2>
+    <p>Algunas de las propiedades CSS más comunes incluyen:</p>
+    <ul>
+        <li><strong>color:</strong> Define el color del texto.</li>
+        <li><strong>background-color:</strong> Define el color de fondo de un elemento.</li>
+        <li><strong>font-size:</strong> Define el tamaño de la fuente.</li>
+        <li><strong>margin:</strong> Define el espacio alrededor de un elemento.</li>
+        <li><strong>padding:</strong> Define el espacio entre el contenido de un elemento y su borde.</li>
+        <li><strong>border:</strong> Define el borde de un elemento, incluyendo su ancho, estilo y color.</li>
+    </ul>
+    <p>Pueden consultar más en la documentación de CSS: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Documentación de CSS</a></p>
+    <h2>Box Model</h2>
+    <p>El modelo de caja (Box Model) es un concepto fundamental en CSS que describe cómo se calculan las dimensiones y el espacio de los elementos en una página web. Cada elemento HTML se representa como una caja rectangular que consta de cuatro áreas: contenido, padding, borde y margen.</p>
+    <ul>
+        <li><strong>Contenido:</strong> Es el área donde se encuentra el contenido real del elemento, como texto o imágenes.</li>
+        <li><strong>Padding:</strong> Es el espacio entre el contenido y el borde del elemento. El padding puede ser transparente o tener un color de fondo.</li>
+        <li><strong>Borde:</strong> Es la línea que rodea el padding y el contenido. El borde puede tener diferentes estilos (sólido, punteado, etc.) y colores.</li>
+        <li><strong>Margen:</strong> Es el espacio entre el borde del elemento y los elementos adyacentes. El margen es completamente transparente.</li>
+    </ul>
+    <p>El modelo de caja es esencial para entender cómo se distribuyen los elementos en una página web y cómo se pueden controlar sus dimensiones y espacios utilizando CSS.</p>
+    <p class="box-content">Imaginemos un ejemplo sencillo:</p>
+    <!-- Ir a CSS box model example-->
+    <p class="box-content">Contenido</p>
+ 
+    <h2>Unidades en CSS</h2>
+    <p>En CSS, se pueden utilizar diferentes unidades para definir tamaños y distancias. Algunas de las unidades más comunes incluyen:</p>
+    <ul>
+        <li><strong>px (píxeles):</strong> Unidad absoluta que representa un punto en la pantalla. Es la unidad más común para definir tamaños fijos.</li>
+        <li><strong>% (porcentaje):</strong> Unidad relativa que representa un porcentaje del tamaño del elemento contenedor. Es útil para diseños fluidos y responsivos.</li>
+        <li><strong>em:</strong> Unidad relativa que se basa en el tamaño de la fuente del elemento actual. 1em es igual al tamaño de la fuente del elemento, por lo que es útil para definir tamaños relativos a la fuente.</li>
+        <li><strong>rem:</strong> Unidad relativa que se basa en el tamaño de la fuente raíz (generalmente el tamaño de la fuente del elemento <code>&lt;html&gt;</code>). 1rem es igual al tamaño de la fuente raíz, lo que permite una mayor consistencia en los tamaños relativos.</li>
+    </ul>
+    <p>Imaginemos un ejemplo sencillo:</p>
+    <div class="units-example">
+        <p class="px">Caja en pixeles</p>
+        <p class="percent">Caja en porcentaje</p>
+        <p class="em">Tamaño de texto en em</p>
+        <p class="rem">Tamaño de texto en rem</p>
+        <p class="vw">Caja en viewport width</p>
+        <p class="vh">Caja en viewport height</p>   
+    </div>
+    <p>Más sobre unidades en CSS: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length" target="_blank">Documentación de CSS</a></p>
+    <h2>Distribución de elementos</h2>
+    <p>CSS ofrece varias técnicas para distribuir elementos en una página web, incluyendo:</p>
+    <ul>
+        <li><strong>Flexbox:</strong> Un modelo de diseño unidimensional que permite distribuir elementos en una sola dirección (horizontal o vertical) y controlar su alineación y espacio entre ellos.</li>
+        <li><strong>Grid:</strong> Un modelo de diseño bidimensional que permite crear diseños complejos con filas y columnas, facilitando la distribución de elementos en ambas direcciones.</li>
+        <li><strong>Float:</strong> Una técnica más antigua que permite colocar elementos a la izquierda o derecha de su contenedor, aunque puede ser menos flexible que Flexbox o Grid.</li>
+    </ul>
+    <p>Cada una de estas técnicas tiene sus propias ventajas y casos de uso, y es importante elegir la adecuada según las necesidades del diseño y la estructura de la página web.</p>
+    <p>Imaginemos un ejemplo sencillo con flexbox:</p>
+    <div id="flex-container">
+        <div class="flex-item">Elemento 1</div>
+        <div class="flex-item">Elemento 2</div>
+        <div class="flex-item">Elemento 3</div>
+    </div>
+        <div id="flex-container1">
+        <div class="flex-item">Elemento 1</div>
+        <div class="flex-item">Elemento 2</div>
+        <div class="flex-item">Elemento 3</div>
+    </div>
+        <div id="flex-container2">
+        <div class="flex-item">Elemento 1</div>
+        <div class="flex-item">Elemento 2</div>
+        <div class="flex-item">Elemento 3</div>
+    </div>
+    <p>Imaginemos un ejemplo sencillo con grid:</p>
+    <div id="grid-container">
+        <div class="grid-item1 grid-item">Elemento 1</div>
+        <div class="grid-item">Elemento 2</div>
+        <div class="grid-item">Elemento 3</div>
+        <div class="grid-item">Elemento 4</div>
+        <div class="grid-item">Elemento 5</div>
+        <div class="grid-item">Elemento 6</div>
+    </div>
+    <p>Más información sobre Flexbox y Grid: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank">Documentación de CSS</a></p>
+    <h2>Media Queries</h2>
+    <p>Las Media Queries son una característica de CSS que permite aplicar estilos específicos en función de las características del dispositivo o la pantalla, como el ancho, la altura, la orientación, entre otros. Esto es fundamental para crear diseños web responsivos que se adapten a diferentes tamaños de pantalla y dispositivos.</p>
+    <p>Las Media Queries se definen utilizando la regla <code>@media</code>, seguida de una condición que especifica cuándo se deben aplicar los estilos. Por ejemplo:</p>
+    <pre class="highlight">
+@media (max-width: 600px) {
+    /* Estilos para pantallas pequeñas */
+}
+    </pre>
+    <p>En este ejemplo, los estilos dentro de la Media Query se aplicarán solo cuando el ancho de la pantalla sea de 600 píxeles o menos, lo que es común en dispositivos móviles. Esto permite ajustar el diseño y la presentación de la página para mejorar la experiencia del usuario en diferentes dispositivos.</p>
+    <p>Más información sobre Media Queries: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries" target="_blank">Documentación de CSS</a></p>
+    <h2>Hover y animaciones</h2>
+    <p>El pseudo-clase <code>:hover</code> en CSS se utiliza para aplicar estilos a un elemento cuando el usuario pasa el cursor sobre él. Esto es comúnmente utilizado para mejorar la interactividad de los elementos en una página web, como enlaces, botones, o cualquier otro elemento que se desee destacar al interactuar con él.</p>
+    <p>Por ejemplo, para cambiar el color de un enlace cuando el usuario pasa el cursor sobre él, se puede utilizar la siguiente regla CSS:</p>
+    <pre class="highlight">
+a:hover {
+    color: red;
+}
+    </pre>
+    <p> Ejemplo sencillo:</p>
+    <a href="#" class="hover-link">Pasa el cursor sobre este enlace</a>
+    <p>Además de <code>:hover</code>, CSS también ofrece la capacidad de crear animaciones utilizando la regla <code>@keyframes</code> y la propiedad <code>animation</code>. Esto permite definir una serie de estilos que se aplican en diferentes momentos durante la animación, creando efectos visuales dinámicos. Por ejemplo:</p>
+    <pre class="highlight">
+@keyframes example {
+    from {background-color: red;}   
+    to {background-color: blue;}
+}
+    </pre>
+    <p> Ejemplo sencillo:</p>
+    <div class="animated-box">Caja animada</div>
+    <p>Más información sobre Hover y animaciones: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover" target="_blank">Documentación de CSS</a></p>    
+</body>
+</html>
